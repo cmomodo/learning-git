@@ -2,6 +2,13 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: "CloudFormation for VPC"
 
 Resources:
+  #intenet gateway
+  InternetGateway:
+    Type: "AWS::EC2::InternetGateway"
+    Properties:
+      Tags:
+        - Key: Name
+          Value: "InternetGateway"
   MyVPC:
     Type: "AWS::EC2::VPC"
     Properties:
@@ -11,3 +18,9 @@ Resources:
       Tags:
         - Key: Name
           Value: MyVPC
+
+  AttachGateway:
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    Properties:
+      VpcId: !Ref MyVPC
+      InternetGatewayId: !Ref InternetGateway
