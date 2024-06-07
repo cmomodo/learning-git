@@ -24,3 +24,5 @@ Resources:
     Properties:
       VpcId: !Ref MyVPC
       InternetGatewayId: !Ref InternetGateway
+
+      #route table next.
