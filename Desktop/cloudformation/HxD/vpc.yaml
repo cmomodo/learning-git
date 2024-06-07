@@ -25,4 +25,5 @@ Resources:
       VpcId: !Ref MyVPC
       InternetGatewayId: !Ref InternetGateway
 
-      #route table next.
+      #route table next
+      #subnet next
